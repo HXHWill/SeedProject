@@ -1,0 +1,28 @@
+project.ext {
+    dependenciesMethod = { obj, dps ->
+        dps.each { entry ->
+            def value = entry.value
+            if (value instanceof List) {
+                value.each { result ->
+                    executeDds obj, result, rootProject.dependencies.get(entry.key)
+                }
+            } else {
+                executeDds obj, value, rootProject.dependencies.get(entry.key)
+            }
+        }
+    }
+}
+
+void executeDds(obj, type, library) {
+    if (type == 'compile') {
+        obj.compile library
+    } else if (type == 'provided') {
+        obj.provided library
+    } else if (type == 'debugCompile') {
+        obj.debugCompile library
+    } else if (type == 'testCompile') {
+        obj.testCompile library
+    } else if (type == 'apt') {
+        obj.apt library
+    }
+}
