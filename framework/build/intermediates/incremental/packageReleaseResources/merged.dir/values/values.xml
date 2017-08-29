@@ -1,7 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<resources>
-    <color name="bg_back_pressed_color">#222222</color>
-    <color name="transparent">#00000000</color>
-    <declare-styleable name="CommonTitle"><attr format="string" name="leftActionText"/><attr format="reference" name="leftActionImage"/><attr format="string" name="rightActionText"/><attr format="reference" name="rightActionImage"/><attr format="color" name="titleBackground"/><attr format="string" name="barTitle"/><attr format="string" name="barSubTitle"/></declare-styleable>
-    <string name="app_name">Swipeback</string>
-</resources>
