@@ -1,0 +1,2 @@
+<?xml version="1.0" encoding="utf-8"?>
+<merger version="3"><dataSet config="main"><source path="/Users/carlisle/Documents/GitProjects/Android/Seed/framework/src/main/assets"/><source path="/Users/carlisle/Documents/GitProjects/Android/Seed/framework/build/generated/assets/shaders/release"/></dataSet><dataSet config="release"><source path="/Users/carlisle/Documents/GitProjects/Android/Seed/framework/src/release/assets"/></dataSet></merger>

@@ -1,20 +1,21 @@
 ext {
     android = [
-            compileSdkVersion: 26,
-            buildToolsVersion: '26.0.1',
+            compileSdkVersion: 25,
+            buildToolsVersion: '25.0.2' +
+                    '',
             applicationId    : 'com.carlisle.seed',
             minSdkVersion    : 14,
-            targetSdkVersion : 26
+            targetSdkVersion : 25
     ]
 
     // AllDependencies
     dependencies = [
             // Google
-            "support-v4"                   : 'com.android.support:support-v4:26.0.1',
-            "support-appcompat-v7"         : 'com.android.support:appcompat-v7:26.0.1',
-            "support-design"               : 'com.android.support:design:26.0.1',
-            "support-customtabs"           : 'com.android.support:customtabs:26.0.1',
-            "support-recyclerview-v7"      : 'com.android.support:recyclerview-v7:26.0.1',
+            "support-v4"                   : 'com.android.support:support-v4:25.1.0',
+            "support-appcompat-v7"         : 'com.android.support:appcompat-v7:25.1.0',
+            "support-design"               : 'com.android.support:design:25.1.0',
+            "support-customtabs"           : 'com.android.support:customtabs:25.1.0',
+            "support-recyclerview-v7"      : 'com.android.support:recyclerview-v7:25.1.0',
             "multidex"                     : 'com.android.support:multidex:1.0.0',
 
             // square
@@ -40,6 +41,7 @@ ext {
             "calligraphy"                  : 'uk.co.chrisjenx:calligraphy:2.3.0', // font
             "easing"                       : 'com.daimajia.easing:library:2.0@aar',
             "androidanimations"            : 'com.daimajia.androidanimations:library:2.2@aar',
+            "statusbarutil"                : 'com.jaeger.statusbarutil:library:1.4.0',
 
             // for realm
             "parceler-api"                 : 'org.parceler:parceler-api:1.1.9',

@@ -28,5 +28,8 @@ dependencies {
 
 //    project.ext.dependenciesMethod delegate, rootProject.ext.appDps
 
+    compile project(':framework')
+    compile rootProject.ext.dependencies["support-v4"]
     compile rootProject.ext.dependencies["support-appcompat-v7"]
+    compile rootProject.ext.dependencies["utilcode"]
 }
