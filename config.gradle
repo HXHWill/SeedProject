@@ -1,8 +1,7 @@
 ext {
     android = [
             compileSdkVersion: 25,
-            buildToolsVersion: '25.0.2' +
-                    '',
+            buildToolsVersion: '25.0.2',
             applicationId    : 'com.carlisle.seed',
             minSdkVersion    : 14,
             targetSdkVersion : 25

@@ -1,0 +1,2 @@
+-keep class com.daimajia.androidaimations.** { *; }
+-keep interface com.daimajia.androidaimations.** { *; }
