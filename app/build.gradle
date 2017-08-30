@@ -1,8 +1,8 @@
 apply plugin: 'com.android.application'
 
 def globalConfiguration = rootProject.ext
-def APP_VERSION = "0.0.1"
-def APP_VERSION_CODE = 1
+def APP_VERSION = "0.0.2"
+def APP_VERSION_CODE = 2
 
 def releaseTime() {
     return new Date().format("yyyy-MM-dd", TimeZone.getTimeZone("UTC"))
