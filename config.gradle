@@ -57,7 +57,8 @@ ext {
             "okserver"                     : 'com.lzy.net:okserver:2.0.1',
 
             // tools
-            "utilcode"                     : 'com.blankj:utilcode:1.8.3'
+            "utilcode"                     : 'com.blankj:utilcode:1.8.3',
+            "SeedFramework"                : 'com.github.CarlisleChan:SeedFramework:v1.0'
     ]
 
     appDps = [

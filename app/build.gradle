@@ -12,9 +12,9 @@ android {
     signingConfigs {
         release {
             storeFile file("../seed.jks")
-            storePassword "11111111"
-            keyAlias "seed"
-            keyPassword "11111111"
+            storePassword project.hasProperty("KEYSTORE_PASS") ? KEYSTORE_PASS : System.getenv("KEYSTORE_PASS")
+            keyAlias project.hasProperty("ALIAS_NAME") ? ALIAS_NAME : System.getenv("ALIAS_NAME")
+            keyPassword project.hasProperty("ALIAS_PASS") ? ALIAS_PASS : System.getenv("ALIAS_PASS")
             v2SigningEnabled = false
         }
     }
@@ -25,7 +25,7 @@ android {
     defaultConfig {
         minSdkVersion globalConfiguration.android.minSdkVersion
         targetSdkVersion globalConfiguration.android.targetSdkVersion
-        applicationId "com.carlisle.seed"
+        applicationId globalConfiguration.android.applicationId
         versionCode APP_VERSION_CODE
         versionName APP_VERSION
 
@@ -95,9 +95,9 @@ dependencies {
 
 //    project.ext.dependenciesMethod delegate, rootProject.ext.appDps
 
-    compile project(':framework')
     compile rootProject.ext.dependencies["support-v4"]
     compile rootProject.ext.dependencies["support-appcompat-v7"]
     compile rootProject.ext.dependencies["utilcode"]
     compile rootProject.ext.dependencies["statusbarutil"]
+    compile rootProject.ext.dependencies["SeedFramework"]
 }
