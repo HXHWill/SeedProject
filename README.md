@@ -3,7 +3,7 @@
 
 [![Build Status](https://travis-ci.org/CarlisleChan/SeedProject.svg?branch=master)](https://travis-ci.org/CarlisleChan/SeedProject)
 
-## travis 配置
+## travis 环境变量配置
 
 ```
 KEYSTORE_PASS=11111111
