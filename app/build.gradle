@@ -40,32 +40,17 @@ android {
             zipAlignEnabled true
             signingConfig signingConfigs.release
             proguardFiles getDefaultProguardFile('proguard-android.txt'), "$rootDir/config/proguard-rules.pro"
-
-            applicationVariants.all { variant ->
-                variant.outputs.each { output ->
-                    def outputFile = output.outputFile
-                    if (outputFile != null && outputFile.name.endsWith('.apk')) {
-                        def fileName = "${variant.flavorName}_v${defaultConfig.versionName}_${releaseTime()}_${variant.buildType.name}.apk"
-                        output.outputFile = new File(outputFile.parent, fileName)
-                    }
-                }
-            }
         }
 
         debug {
-            applicationVariants.all { variant ->
-                variant.outputs.each { output ->
-                    def outputFile = output.outputFile
-                    if (outputFile != null && outputFile.name.endsWith('.apk')) {
-                        def fileName = "${variant.flavorName}_v${defaultConfig.versionName}_${releaseTime()}_${variant.buildType.name}.apk"
-                        output.outputFile = new File(outputFile.parent, fileName)
-                    }
-                }
-            }
+            minifyEnabled false
+            shrinkResources false
+            zipAlignEnabled false
         }
     }
 
     productFlavors {
+        github {}
         googlepaly {}
         productFlavors.all { flavor ->
             flavor.manifestPlaceholders = [APP_CHANNEL: name]

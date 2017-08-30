@@ -1,18 +1,13 @@
 language: android
-
-jdk:
-  - oraclejdk8
-
+sudo: false
 android:
   components:
-    - tools
-    - android-25
-    - platform-tools
-    - build-tools-25.0.2
-    - extra-android-m2repository
-    - extra-android-support
-
-script: ./gradlew build
+  - tools
+  - android-25
+  - platform-tools
+  - build-tools-25.0.2
+  - extra-android-m2repository
+  - extra-android-support
 
 before_cache:
   - rm -f $HOME/.gradle/caches/modules-2/modules-2.lock
@@ -22,30 +17,20 @@ cache:
     - $HOME/.gradle/caches/
     - $HOME/.gradle/wrapper/
 
-#before_install:
-#  - mkdir -p $ANDROID_HOME/licenses
-#  # The hash may change in the future
-#  - echo '8933bad161af4178b1185d1a37fbf41ea5269c55' > $ANDROID_HOME/licenses/android-sdk-license
-#  - echo '84831b9409646a918e30573bab4c9c91346d8abd' > $ANDROID_HOME/licenses/android-sdk-preview-license
-#
-#before_deploy:
-#  - echo $ANDROID_KEYSTORE | base64 -d > android.keystore
-#  - jarsigner -verbose -sigalg SHA1withRSA -digestalg SHA1 -keystore android.keystore -storepass $ANDROID_KEYPASS app/build/outputs/apk/app-release-unsigned.apk $ANDROID_ALIAS
-#  - $ANDROID_HOME/build-tools/23.0.3/zipalign -v 4 app/build/outputs/apk/app-release-unsigned.apk app/build/outputs/apk/app-release.apk
-#  - rm app/build/outputs/apk/app-release-unsigned.apk
-#  - rm android.keystore
-#  - cp app/build/outputs/apk/app-release.apk app/build/outputs/apk/Seed_$TRAVIS_TAG.apk
-#  - gem install fir-cli
-#
-#deploy:
-#  provider: releases
-#  skip_cleanup: true
-#  api_key:
-#    secure: F/3WjtqaFxTdstyNYkPBclDebxJwgws+yiW1cEJTxZiINKfWN4Tzn83OgoBio0ZbsrsfG6H/htIYmUmQIxiIcfswn1Jh1fGHikGvh+FNAjbOkot7ki006Bn1jXzHBSahdReiydgUy6SH/UDZd8gNjRDDw/D148aHBuHnffZV3rhatPv5Fj2JsVELCR5zDVrNk5M1GPQH0yVocmPe0BgQuiOOXbjx2ESYxuO5a/zxRUA7cf7hyjtmKYWaJYgi5m7c1SC2f8iqUxN4IUQsE43/4ALKfBI6GdKOPQZyujeinE8HyOPj60GO5EtFYpVjA8HDj/lmr8B4Nva2pRHLV47P1NAw5DlSoNgoVKmGlQ8FbenMmerpln49Mg80pVwK7yWBsW38iDwviOGAtnVEv9z2ylNN/07tjyB7Rm20jfi7fE6xZOCtXg8mS+NZBU3O/w7Hizne+a+XGReSA8QHouFY6zPSojKUvw4Q7zC17mqOI6B9YO4wxKEenFJUhFEEtEL3QMWOFBitngeGX7b7JR+Rne6bPKKySHTRzID0J9jc+8FT1nJoxq+aFuVdAKTetVAVh90XvRi1VkLvVAlrGgXVFzmb02E2KFfwFsx19km45bX/8LcbqcsmZK1oLeP1She+bSwzmUsY2sonSNj6U629gD8CzmMs4Rn5CJw9H4S0odw=
-#  file: app/build/outputs/apk/Seed_$TRAVIS_TAG.apk
-#  on:
-#    repo: CarlisleChan/SeedProject
-#    tags: true
-#
-#after_deploy:
-#  - fir p app/build/outputs/apk/app-release.apk -T $FIR_TOKEN -c "`git cat-file tag $TRAVIS_TAG`"
+before_install:
+  - gem install fir-cli
+
+script: ./gradlew build
+
+deploy:
+  provider: releases
+  skip_cleanup: true
+  api_key:
+    secure: uJpVILpxz1xsPtKDwDfNvuYcFNkkkBDxIVOT4SSL3gIX7fpONcp6XyZfRGZA7sOcxOKu6Psz6aoITdIUw1nX+kcyTsNXVxPuSYDH0flLLYMttz537jaM6YqvP/GK7lP9E3w+wCpYE/hdcC83wEuZeRxS+7yHIHn971AqDrI6b4snVzpoJCNzaENyRuGlPpf0OkkE8m/0tiwQllEnTv3nP82CY+pYS5mAyHLo3NvBGQ6VikWi3g7r3TtApg/oBPzzK9aIhAXR6dD7iQIfbfvmwoXFVGdmwsSOn21haTGjk4RrEfLZEKhooUbXRjPZcx3glsywc3PjSu2J9jsTDNd4EmtaAU8rPTDDzqGMvupBsGrvRle+D6hIwimwv8CCcHdWubPxr3J2Lz4EE4PmHkkpaZwefE7PssTzLLxQLMfvK2vEEeOYvqv3L1+rDQ5NDZGTnkD77sJceeZyBu73Jzt7GZLGmnU8Zrqx/7wYB18SoiJHdYb4CzH6nlQBPxIcDL4jcJb47CO6EqNeQDiY/LVVw74VxqytfDAysi4xMjbZhQqbl+AV8FSala+Q58pAjqd4OsSFtABrB1IUwvIM+a92vrbY3RR0xWURZjLsRzANY2iPE8YeVcRJzpRaRYkODeGeSF4LVRG5tT22PCvAdbXpcBmSRuwk6PzdKZdp8WCerIE=
+  file: app/build/outputs/apk/app-github-release.apk
+  on:
+      tags: true
+      all_branches: true
+
+after_deploy:
+  - fir p app/build/outputs/apk/app-github-release.apk -T $FIR_TOKEN -c "`git cat-file tag $TRAVIS_TAG`"
