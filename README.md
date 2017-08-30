@@ -5,7 +5,7 @@
 
 ## travis 配置
 
-````
+```
 KEYSTORE_PASS=11111111
 
 ALIAS_NAME=seed
