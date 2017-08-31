@@ -1,4 +1,4 @@
-package com.carlisle.seed.module.home;
+package com.carlisle.seed.module;
 
 import android.os.Bundle;
 import android.support.annotation.Nullable;
@@ -13,6 +13,8 @@ import android.widget.TextView;
 import com.carlisle.framework.BaseActivity;
 import com.carlisle.framework.FragmentAdapter;
 import com.carlisle.seed.R;
+import com.carlisle.seed.module.home.FirstFragment;
+import com.carlisle.seed.module.home.SecondFragment;
 
 import java.util.ArrayList;
 import java.util.List;
