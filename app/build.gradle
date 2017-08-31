@@ -1,4 +1,7 @@
 apply plugin: 'com.android.application'
+apply plugin: 'com.neenbedankt.android-apt'
+apply plugin: 'realm-android'
+apply plugin: 'walle'
 
 def globalConfiguration = rootProject.ext
 def APP_VERSION = "0.0.2"
@@ -8,14 +11,19 @@ def releaseTime() {
     return new Date().format("yyyy-MM-dd", TimeZone.getTimeZone("UTC"))
 }
 
+walle {
+    apkOutputFolder = new File("${project.buildDir}/outputs/channels");
+    apkFileNameFormat = '${appName}-${channel}-${buildType}.apk';
+    channelFile = new File("${project.getProjectDir()}/channel")
+}
+
 android {
     signingConfigs {
         release {
-            storeFile file("../seed.jks")
+            storeFile file("${project.getProjectDir()}/seed.jks")
             storePassword project.hasProperty("KEYSTORE_PASS") ? KEYSTORE_PASS : System.getenv("KEYSTORE_PASS")
             keyAlias project.hasProperty("ALIAS_NAME") ? ALIAS_NAME : System.getenv("ALIAS_NAME")
             keyPassword project.hasProperty("ALIAS_PASS") ? ALIAS_PASS : System.getenv("ALIAS_PASS")
-            v2SigningEnabled = false
         }
     }
 
@@ -49,13 +57,13 @@ android {
         }
     }
 
-    productFlavors {
-        github {}
-        googlepaly {}
-        productFlavors.all { flavor ->
-            flavor.manifestPlaceholders = [APP_CHANNEL: name]
-        }
-    }
+//    productFlavors {
+//        github {}
+//        googlepaly {}
+//        productFlavors.all { flavor ->
+//            flavor.manifestPlaceholders = [APP_CHANNEL: name]
+//        }
+//    }
 
     lintOptions {
         abortOnError false
@@ -78,11 +86,37 @@ android {
 dependencies {
     compile fileTree(dir: 'libs', include: ['*.jar'])
 
-//    project.ext.dependenciesMethod delegate, rootProject.ext.appDps
-
+    // Google
     compile rootProject.ext.dependencies["support-v4"]
-    compile rootProject.ext.dependencies["support-appcompat-v7"]
+    compile rootProject.ext.dependencies["support-design"]
+    compile rootProject.ext.dependencies["multidex"]
+
+    // square
+    compile rootProject.ext.dependencies["retrofit2"]
+    compile rootProject.ext.dependencies["retrofit2-converter-gson"]
+    compile rootProject.ext.dependencies["retrofit2-adapter-rxjava2"]
+    compile rootProject.ext.dependencies["okhttp3"]
+    compile rootProject.ext.dependencies["okhttp3-urlconnection"]
+    compile rootProject.ext.dependencies["okhttp3-logging-interceptor"]
+    compile rootProject.ext.dependencies["rxandroid"]
+
+    // image
+    compile rootProject.ext.dependencies["glide"]
+    compile rootProject.ext.dependencies["glide-transformations"]
+    compile rootProject.ext.dependencies["okhttp3-integration"]
+    compile rootProject.ext.dependencies["PhotoView"]
+
+    // tools
     compile rootProject.ext.dependencies["utilcode"]
     compile rootProject.ext.dependencies["statusbarutil"]
     compile rootProject.ext.dependencies["SeedFramework"]
+    compile rootProject.ext.dependencies["walle"]
+
+    // for realm
+    compile rootProject.ext.dependencies["parceler-api"]
+    apt rootProject.ext.dependencies["parceler"]
+    compile rootProject.ext.dependencies["rxpermissions"]
+
+    // ui
+    compile(rootProject.ext.dependencies["BaseRecyclerViewAdapterHelper"])
 }

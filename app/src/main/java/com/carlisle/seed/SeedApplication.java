@@ -2,6 +2,7 @@ package com.carlisle.seed;
 
 import com.blankj.utilcode.util.Utils;
 import com.carlisle.framework.swipeback.common.SwipeBackApplication;
+import com.carlisle.seed.provider.db.RealmUtil;
 
 /**
  * Creator      : carlisle
@@ -14,5 +15,6 @@ public class SeedApplication extends SwipeBackApplication {
     public void onCreate() {
         super.onCreate();
         Utils.init(this);
+        RealmUtil.init(this);
     }
 }
