@@ -1,4 +1,4 @@
-package com.carlisle.seed;
+package com.carlisle.seed.module;
 
 import android.os.Bundle;
 import android.support.annotation.Nullable;
@@ -8,6 +8,7 @@ import android.view.ViewGroup;
 
 import com.blankj.utilcode.util.LogUtils;
 import com.carlisle.framework.LazyFragment;
+import com.carlisle.seed.R;
 
 /**
  * Creator      : carlisle

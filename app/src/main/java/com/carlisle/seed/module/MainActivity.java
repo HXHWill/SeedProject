@@ -1,9 +1,10 @@
-package com.carlisle.seed;
+package com.carlisle.seed.module;
 
 import android.os.Bundle;
 
 import com.blankj.utilcode.util.FragmentUtils;
 import com.carlisle.framework.BaseActivity;
+import com.carlisle.seed.R;
 
 public class MainActivity extends BaseActivity {
 
