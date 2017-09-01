@@ -1,7 +1,7 @@
 package com.carlisle.seed.provider.db;
 
 import com.blankj.utilcode.util.LogUtils;
-import com.carlisle.seed.module.home.model.GithubBean;
+import com.carlisle.seed.module.search.model.GithubBean;
 
 import io.realm.Realm;
 import io.realm.RealmResults;

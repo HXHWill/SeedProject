@@ -1,25 +1,21 @@
-package com.carlisle.seed.module.home;
+package com.carlisle.seed.module.search;
 
-import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
+import android.support.v7.widget.LinearLayoutManager;
+import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.ImageView;
-import android.widget.TextView;
 
 import com.blankj.utilcode.util.LogUtils;
 import com.blankj.utilcode.util.ToastUtils;
-import com.bumptech.glide.Glide;
-import com.bumptech.glide.load.resource.drawable.DrawableTransitionOptions;
 import com.carlisle.framework.LazyFragment;
 import com.carlisle.seed.R;
-import com.carlisle.seed.module.home.http.GithubApi;
-import com.carlisle.seed.module.home.model.GithubBean;
-import com.carlisle.seed.module.login.LoginActivity;
+import com.carlisle.seed.module.search.http.GithubApi;
+import com.carlisle.seed.module.search.model.GithubBean;
 import com.carlisle.seed.provider.db.UserDao;
 import com.carlisle.seed.provider.http.ApiFactory;
 import com.carlisle.seed.provider.http.Domain;
@@ -35,27 +31,25 @@ import io.reactivex.schedulers.Schedulers;
  * Description  :
  */
 
-public class FirstFragment extends LazyFragment {
+public class SearchFragment extends LazyFragment {
 
     private EditText contentView;
-    private ImageView avatarView;
-    private TextView usernameView;
     private Button searchButton;
+    private RecyclerView recyclerView;
+    private SearchAdapter adapter;
 
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        return inflater.inflate(R.layout.fragment_first, container, false);
+        return inflater.inflate(R.layout.fragment_search, container, false);
     }
 
     @Override
     public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
-        contentView = (EditText) view.findViewById(R.id.et_content);
-        avatarView = (ImageView) view.findViewById(R.id.iv_avatar);
-        usernameView = (TextView) view.findViewById(R.id.tv_username);
-        searchButton = (Button) view.findViewById(R.id.btn_search);
 
+        contentView = (EditText) view.findViewById(R.id.et_content);
+        searchButton = (Button) view.findViewById(R.id.btn_search);
         searchButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -63,12 +57,15 @@ public class FirstFragment extends LazyFragment {
             }
         });
 
-        view.findViewById(R.id.tv_login).setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                startActivity(new Intent(getActivity(), LoginActivity.class));
-            }
-        });
+        recyclerView = (RecyclerView) view.findViewById(R.id.recycler_view);
+        adapter = new SearchAdapter(UserDao.getAll());
+        recyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));
+        recyclerView.setAdapter(adapter);
+    }
+
+    @Override
+    protected void onUserVisible() {
+        super.onUserVisible();
     }
 
     private void searchUserInfo(String username) {
@@ -85,12 +82,6 @@ public class FirstFragment extends LazyFragment {
                     @Override
                     public void onNext(GithubBean value) {
                         LogUtils.d("fetch onNext: " + value.toString());
-                        usernameView.setText(value.getLogin());
-                        Glide.with(getActivity())
-                                .load(value.getAvatarUrl())
-                                .transition(new DrawableTransitionOptions().dontTransition())
-                                .into(avatarView);
-
                         UserDao.save(value);
                     }
 

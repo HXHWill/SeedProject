@@ -1,4 +1,4 @@
-package com.carlisle.seed.module.home;
+package com.carlisle.seed.module.search;
 
 import android.support.annotation.Nullable;
 import android.widget.ImageView;
@@ -6,7 +6,7 @@ import android.widget.ImageView;
 import com.bumptech.glide.Glide;
 import com.bumptech.glide.load.resource.drawable.DrawableTransitionOptions;
 import com.carlisle.seed.R;
-import com.carlisle.seed.module.home.model.GithubBean;
+import com.carlisle.seed.module.search.model.GithubBean;
 import com.chad.library.adapter.base.BaseQuickAdapter;
 import com.chad.library.adapter.base.BaseViewHolder;
 
@@ -18,9 +18,9 @@ import java.util.List;
  * Description  :
  */
 
-public class SecondAdapter extends BaseQuickAdapter<GithubBean, BaseViewHolder> {
+public class SearchAdapter extends BaseQuickAdapter<GithubBean, BaseViewHolder> {
 
-    public SecondAdapter(@Nullable List data) {
+    public SearchAdapter(@Nullable List data) {
         super(R.layout.item_search, data);
     }
 

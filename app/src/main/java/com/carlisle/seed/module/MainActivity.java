@@ -15,8 +15,8 @@ import android.widget.TextView;
 import com.carlisle.framework.BaseActivity;
 import com.carlisle.framework.FragmentAdapter;
 import com.carlisle.seed.R;
-import com.carlisle.seed.module.home.FirstFragment;
-import com.carlisle.seed.module.home.SecondFragment;
+import com.carlisle.seed.module.home.HomeFragment;
+import com.carlisle.seed.module.search.SearchFragment;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -51,14 +51,10 @@ public class MainActivity extends BaseActivity {
         viewPager = (ViewPager) findViewById(R.id.view_pager);
 
         List<Fragment> fragments = new ArrayList<>();
-        fragments.add(new FirstFragment());
-        fragments.add(new SecondFragment());
+        fragments.add(new HomeFragment());
+        fragments.add(new SearchFragment());
 
-        List<String> titles = new ArrayList<>();
-        titles.add("first");
-        titles.add("second");
-
-        fragmentAdapter = new FragmentAdapter(getSupportFragmentManager(), fragments, titles);
+        fragmentAdapter = new FragmentAdapter(getSupportFragmentManager(), fragments);
         viewPager.setOffscreenPageLimit(fragments.size());
         viewPager.setAdapter(fragmentAdapter);
         tabLayout.setupWithViewPager(viewPager);

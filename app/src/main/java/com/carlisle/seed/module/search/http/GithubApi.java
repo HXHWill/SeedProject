@@ -1,6 +1,6 @@
-package com.carlisle.seed.module.home.http;
+package com.carlisle.seed.module.search.http;
 
-import com.carlisle.seed.module.home.model.GithubBean;
+import com.carlisle.seed.module.search.model.GithubBean;
 
 import io.reactivex.Observable;
 import retrofit2.http.GET;

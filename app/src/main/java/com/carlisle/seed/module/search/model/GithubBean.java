@@ -1,4 +1,4 @@
-package com.carlisle.seed.module.home.model;
+package com.carlisle.seed.module.search.model;
 
 import com.google.gson.annotations.SerializedName;
 
