@@ -1,5 +1,7 @@
 package com.carlisle.seed.module;
 
+import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.design.widget.TabLayout;
@@ -34,6 +36,11 @@ public class MainActivity extends BaseActivity {
     private ViewPager viewPager;
 
     private FragmentAdapter fragmentAdapter;
+
+    public static Intent buildIntent(Context context) {
+        Intent intent = new Intent(context, MainActivity.class);
+        return intent;
+    }
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {

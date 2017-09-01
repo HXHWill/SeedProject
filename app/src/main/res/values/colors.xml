@@ -35,7 +35,7 @@
 
     <color name="colorPrimary">#F7C242</color>
     <color name="colorPrimaryDark">#F7C242</color>
-    <color name="colorAccent">@color/white_90</color>
+    <color name="colorAccent">@color/black_30</color>
     <color name="colorAccentLight">@color/white_30</color>
     <color name="colorAccentDark">@color/black_70</color>
 

@@ -1,5 +1,6 @@
 package com.carlisle.seed.module.home;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.view.LayoutInflater;
@@ -18,6 +19,7 @@ import com.carlisle.framework.LazyFragment;
 import com.carlisle.seed.R;
 import com.carlisle.seed.module.home.http.GithubApi;
 import com.carlisle.seed.module.home.model.GithubBean;
+import com.carlisle.seed.module.login.LoginActivity;
 import com.carlisle.seed.provider.db.UserDao;
 import com.carlisle.seed.provider.http.ApiFactory;
 import com.carlisle.seed.provider.http.Domain;
@@ -58,6 +60,13 @@ public class FirstFragment extends LazyFragment {
             @Override
             public void onClick(View v) {
                 searchUserInfo(contentView.getText().toString().trim());
+            }
+        });
+
+        view.findViewById(R.id.tv_login).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(getActivity(), LoginActivity.class));
             }
         });
     }
