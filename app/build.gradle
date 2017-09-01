@@ -88,6 +88,7 @@ dependencies {
 
     // Google
     compile rootProject.ext.dependencies["support-v4"]
+    compile rootProject.ext.dependencies["support-appcompat-v7"]
     compile rootProject.ext.dependencies["support-design"]
     compile rootProject.ext.dependencies["multidex"]
 
@@ -119,4 +120,5 @@ dependencies {
 
     // ui
     compile(rootProject.ext.dependencies["BaseRecyclerViewAdapterHelper"])
+    compile(rootProject.ext.dependencies["calligraphy"])
 }

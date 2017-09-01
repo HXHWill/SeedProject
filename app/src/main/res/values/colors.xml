@@ -1,6 +1,51 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="colorPrimary">#3F51B5</color>
-    <color name="colorPrimaryDark">#303F9F</color>
-    <color name="colorAccent">#FF4081</color>
+    <color name="yellow_5">#fffde7</color>
+    <color name="yellow_10">#fff9c4</color>
+    <color name="yellow_20">#fff59d</color>
+    <color name="yellow_30">#fff176</color>
+    <color name="yellow_40">#ffee58</color>
+    <color name="yellow_50">#ffeb3b</color>
+    <color name="yellow_60">#fdd835</color>
+    <color name="yellow_70">#fbc02d</color>
+    <color name="yellow_80">#f9a825</color>
+    <color name="yellow_90">#f57f17</color>
+
+    <color name="white_10">#1AFFFFFF</color>
+    <color name="white_20">#33FFFFFF</color>
+    <color name="white_30">#4DFFFFFF</color>
+    <color name="white_40">#66FFFFFF</color>
+    <color name="white_50">#80FFFFFF</color>
+    <color name="white_60">#99FFFFFF</color>
+    <color name="white_70">#83FFFFFF</color>
+    <color name="white_80">#CCFFFFFF</color>
+    <color name="white_90">#E6FFFFFF</color>
+
+    <color name="black_5">#0D000000</color>
+    <color name="black_10">#1A000000</color>
+    <color name="black_20">#33000000</color>
+    <color name="black_30">#4D000000</color>
+    <color name="black_40">#66000000</color>
+    <color name="black_60">#99000000</color>
+    <color name="black_70">#83000000</color>
+    <color name="black_80">#CC000000</color>
+    <color name="black_90">#E6000000</color>
+
+    <color name="transparent">@android:color/transparent</color>
+
+    <color name="colorPrimary">#F7C242</color>
+    <color name="colorPrimaryDark">#F7C242</color>
+    <color name="colorAccent">@color/white_90</color>
+    <color name="colorAccentLight">@color/white_30</color>
+    <color name="colorAccentDark">@color/black_70</color>
+
+    <color name="textPrimary">@color/black_90</color>
+    <color name="textSecond">@color/black_70</color>
+    <color name="textThird">@color/black_40</color>
+
+    <color name="default_window_background">#EDF2F6</color>
+    <color name="default_film_cover">#7f7b818e</color>
+    <color name="default_item_background">#FEFEFE</color>
+    <color name="default_tab_background">#FEFEFE</color>
+    <color name="default_divider">#BDBDBD</color>
 </resources>
