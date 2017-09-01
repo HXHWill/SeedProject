@@ -121,4 +121,5 @@ dependencies {
     // ui
     compile(rootProject.ext.dependencies["BaseRecyclerViewAdapterHelper"])
     compile(rootProject.ext.dependencies["calligraphy"])
+    compile(rootProject.ext.dependencies["banner"])
 }

@@ -19,7 +19,7 @@ ext {
             // square
             "retrofit2"                    : 'com.squareup.retrofit2:retrofit:2.3.0',
             "retrofit2-converter-gson"     : 'com.squareup.retrofit2:converter-gson:2.3.0',
-            "retrofit2-adapter-rxjava2"     : 'com.squareup.retrofit2:adapter-rxjava2:2.3.0',
+            "retrofit2-adapter-rxjava2"    : 'com.squareup.retrofit2:adapter-rxjava2:2.3.0',
             "okhttp3"                      : 'com.squareup.okhttp3:okhttp:3.8.1',
             "okhttp3-urlconnection"        : 'com.squareup.okhttp3:okhttp-urlconnection:3.8.1',
             "okhttp3-logging-interceptor"  : 'com.squareup.okhttp3:logging-interceptor:3.8.1',
@@ -40,6 +40,7 @@ ext {
             "easing"                       : 'com.daimajia.easing:library:2.0@aar',
             "androidanimations"            : 'com.daimajia.androidanimations:library:2.2@aar',
             "statusbarutil"                : 'com.jaeger.statusbarutil:library:1.4.0',
+            "banner"                       : 'com.youth.banner:banner:1.4.9',
 
             // for realm
             "parceler-api"                 : 'org.parceler:parceler-api:1.1.9',

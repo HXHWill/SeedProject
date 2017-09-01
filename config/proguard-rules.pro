@@ -2,6 +2,7 @@
 
 -include proguard-about-libraries.pro
 -include proguard-androidaimations.pro
+-include proguard-banner.pro
 -include proguard-base-recyclerView.pro
 -include proguard-bugly.pro
 -include proguard-butterknife.pro
