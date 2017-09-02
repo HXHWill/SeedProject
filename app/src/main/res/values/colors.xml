@@ -11,26 +11,6 @@
     <color name="yellow_80">#f9a825</color>
     <color name="yellow_90">#f57f17</color>
 
-    <color name="white_10">#1AFFFFFF</color>
-    <color name="white_20">#33FFFFFF</color>
-    <color name="white_30">#4DFFFFFF</color>
-    <color name="white_40">#66FFFFFF</color>
-    <color name="white_50">#80FFFFFF</color>
-    <color name="white_60">#99FFFFFF</color>
-    <color name="white_70">#83FFFFFF</color>
-    <color name="white_80">#CCFFFFFF</color>
-    <color name="white_90">#E6FFFFFF</color>
-
-    <color name="black_5">#0D000000</color>
-    <color name="black_10">#1A000000</color>
-    <color name="black_20">#33000000</color>
-    <color name="black_30">#4D000000</color>
-    <color name="black_40">#66000000</color>
-    <color name="black_60">#99000000</color>
-    <color name="black_70">#83000000</color>
-    <color name="black_80">#CC000000</color>
-    <color name="black_90">#E6000000</color>
-
     <color name="transparent">@android:color/transparent</color>
 
     <color name="colorPrimary">#F7C242</color>

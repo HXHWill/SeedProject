@@ -3,13 +3,6 @@
 
     <style name="AppWelcome" parent="android:Theme.Translucent.NoTitleBar.Fullscreen" />
 
-    <style name="ActivityTransition" parent="@android:style/Animation.Activity">
-        <item name="android:activityOpenEnterAnimation">@anim/fade_in</item>
-        <item name="android:activityOpenExitAnimation">@anim/no_anim</item>
-        <item name="android:activityCloseEnterAnimation">@anim/no_anim</item>
-        <item name="android:activityCloseExitAnimation">@anim/fade_out</item>
-    </style>
-
     <style name="WindowAnimationFadeInOut">
         <item name="@android:windowEnterAnimation">@anim/fade_in</item>
         <item name="@android:windowExitAnimation">@anim/fade_out</item>
@@ -17,28 +10,6 @@
 
     <style name="AppTheme.Widget.TextView" parent="android:Widget.TextView">
         <item name="fontPath">fonts/BrandonTextRegular.otf</item>
-    </style>
-
-    <style name="Spring" parent="Theme.AppCompat.Light.NoActionBar">
-        <item name="colorPrimary">@color/colorPrimary</item>
-        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
-        <item name="colorAccent">@color/colorAccent</item>
-        <item name="windowActionBar">false</item>
-        <item name="windowNoTitle">true</item>
-        <item name="android:textViewStyle">@style/AppTheme.Widget.TextView</item>
-        <item name="android:windowAnimationStyle">@style/ActivityTransition</item>
-    </style>
-
-    <style name="Spring.Transparent" parent="Spring">
-        <item name="colorPrimaryDark">@color/transparent</item>
-        <item name="android:textColorPrimary">@color/colorPrimary</item>
-    </style>
-
-    <style name="Spring.AppBarOverlay" parent="Theme.AppCompat.Light.NoActionBar" />
-
-    <style name="Spring.PopupOverlay" parent="ThemeOverlay.AppCompat.Light">
-        <item name="android:actionMenuTextColor">#000</item>
-        <item name="android:overlapAnchor">false</item>
     </style>
 
     <style name="TranslucentTheme">

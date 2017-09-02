@@ -23,8 +23,8 @@ FIR_TOKEN=6ebbbdf1f47e221394c61ab55b729e37
     - BaseFragment
     - LazyFragment
     - Swipeback
-    - CommonTitle
     - FragmentAdapter
+    - default theme.xml
 - travis [参考](http://avnpc.com/pages/android-auto-deploy-workflow-on-travis-ci)
 - 多渠道打包 [美团 walle](https://github.com/Meituan-Dianping/walle/)
 - 混淆规则配置 [例子](https://github.com/CarlisleChan/SeedProject/tree/master/config)

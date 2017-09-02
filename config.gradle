@@ -58,12 +58,8 @@ ext {
 
             // tools
             "utilcode"                     : 'com.blankj:utilcode:1.8.3',
-            "SeedFramework"                : 'com.github.CarlisleChan:SeedFramework:v1.3',
+            "SeedFramework"                : 'com.github.CarlisleChan:SeedFramework:v1.4',
             "walle"                        : 'com.meituan.android.walle:library:1.1.5',
-    ]
-
-    appDps = [
-            "support-appcompat-v7": 'compile'
     ]
 
 }

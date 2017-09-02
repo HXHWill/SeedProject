@@ -15,6 +15,7 @@ import android.widget.TextView;
 import com.carlisle.framework.BaseActivity;
 import com.carlisle.framework.FragmentAdapter;
 import com.carlisle.seed.R;
+import com.carlisle.seed.module.base.CommonActivity;
 import com.carlisle.seed.module.home.HomeFragment;
 import com.carlisle.seed.module.search.SearchFragment;
 
@@ -27,7 +28,7 @@ import java.util.List;
  * Description  :
  */
 
-public class MainActivity extends BaseActivity {
+public class MainActivity extends CommonActivity {
 
     private static final int[] TAB_ICONS = {R.drawable.selector_first, R.drawable.selector_second};
     private static final String[] TAB_TITLES = {"search", "history"};

@@ -4,6 +4,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
+import android.support.v7.widget.Toolbar;
 import android.text.TextUtils;
 import android.view.View;
 import android.widget.EditText;
@@ -12,9 +13,8 @@ import android.widget.TextView;
 import com.blankj.utilcode.util.LogUtils;
 import com.blankj.utilcode.util.RegexUtils;
 import com.blankj.utilcode.util.ToastUtils;
-import com.carlisle.framework.CommonTitle;
-import com.carlisle.framework.swipeback.dispatchactivity.SwipeBackActivity;
 import com.carlisle.seed.R;
+import com.carlisle.seed.module.base.CommonActivity;
 
 import java.util.concurrent.TimeUnit;
 
@@ -31,10 +31,10 @@ import io.reactivex.schedulers.Schedulers;
  * Description  :
  */
 
-public class LoginActivity extends SwipeBackActivity {
+public class LoginActivity extends CommonActivity {
     private static final String TAG = "LoginActivity";
 
-    private CommonTitle commonTitle;
+    private Toolbar toolbar;
     private EditText phoneNumberView;
     private TextView getVerifyView;
     private TextView loginView;
@@ -50,16 +50,17 @@ public class LoginActivity extends SwipeBackActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
 
-        commonTitle = (CommonTitle) findViewById(R.id.title);
+        toolbar = (Toolbar) findViewById(R.id.toolbar);
         phoneNumberView = (EditText) findViewById(R.id.et_phone_number);
         getVerifyView = (TextView) findViewById(R.id.tv_get_verify_code);
         loginView = (TextView) findViewById(R.id.tv_login);
         loadingView = findViewById(R.id.rl_loading);
 
-        commonTitle.setOnActionListener(new CommonTitle.OnActionClickListener() {
+        setSupportActionBar(toolbar);
+        toolbar.setNavigationIcon(R.drawable.ic_back);
+        toolbar.setNavigationOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClickedLeftAction() {
-                super.onClickedLeftAction();
+            public void onClick(View v) {
                 finish();
             }
         });
