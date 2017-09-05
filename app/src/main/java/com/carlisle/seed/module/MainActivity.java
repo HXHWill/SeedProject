@@ -12,7 +12,6 @@ import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import com.carlisle.framework.BaseActivity;
 import com.carlisle.framework.FragmentAdapter;
 import com.carlisle.seed.R;
 import com.carlisle.seed.module.base.CommonActivity;
@@ -50,6 +49,11 @@ public class MainActivity extends CommonActivity {
 
         tabLayout = (TabLayout) findViewById(R.id.tab_layout);
         viewPager = (ViewPager) findViewById(R.id.view_pager);
+
+        if (toolbar != null) {
+            getSupportActionBar().setTitle("");
+            toolbar.setNavigationIcon(null);
+        }
 
         List<Fragment> fragments = new ArrayList<>();
         fragments.add(new HomeFragment());

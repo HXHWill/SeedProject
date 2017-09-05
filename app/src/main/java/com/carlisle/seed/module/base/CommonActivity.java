@@ -3,8 +3,10 @@ package com.carlisle.seed.module.base;
 import android.content.pm.ActivityInfo;
 import android.os.Build;
 import android.os.Bundle;
+import android.support.annotation.LayoutRes;
 import android.support.annotation.Nullable;
 import android.support.design.widget.CoordinatorLayout;
+import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.view.WindowManager;
 
@@ -19,6 +21,8 @@ import com.carlisle.seed.R;
 
 public class CommonActivity extends BaseActivity {
 
+    public Toolbar toolbar;
+
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -30,6 +34,33 @@ public class CommonActivity extends BaseActivity {
             getWindow().setBackgroundDrawableResource(R.color.colorPrimaryDark);
             getWindow().setStatusBarColor(getColor(R.color.transparent));
         }
+    }
+
+    @Override
+    public void setContentView(View view) {
+        super.setContentView(view);
+        initToolbar();
+    }
+
+    @Override
+    public void setContentView(@LayoutRes int layoutResID) {
+        super.setContentView(layoutResID);
+        initToolbar();
+    }
+
+    private void initToolbar() {
+        toolbar = (Toolbar) findViewById(R.id.toolbar);
+        if (toolbar == null) {
+            return;
+        }
+        setSupportActionBar(toolbar);
+        toolbar.setNavigationIcon(R.drawable.ic_back);
+        toolbar.setNavigationOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                finish();
+            }
+        });
     }
 
 }
