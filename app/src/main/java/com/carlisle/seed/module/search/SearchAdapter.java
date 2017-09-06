@@ -4,7 +4,6 @@ import android.support.annotation.Nullable;
 import android.widget.ImageView;
 
 import com.bumptech.glide.Glide;
-import com.bumptech.glide.load.resource.drawable.DrawableTransitionOptions;
 import com.carlisle.seed.R;
 import com.carlisle.seed.module.search.model.GithubBean;
 import com.chad.library.adapter.base.BaseQuickAdapter;
@@ -30,7 +29,6 @@ public class SearchAdapter extends BaseQuickAdapter<GithubBean, BaseViewHolder> 
 
         Glide.with(helper.itemView.getContext())
                 .load(item.getAvatarUrl())
-                .transition(new DrawableTransitionOptions().dontTransition())
                 .into((ImageView) helper.getView(R.id.iv_avatar));
     }
 }
