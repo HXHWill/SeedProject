@@ -16,7 +16,7 @@ import com.carlisle.framework.LazyFragment;
 import com.carlisle.seed.R;
 import com.carlisle.seed.module.search.http.GithubApi;
 import com.carlisle.seed.module.search.model.GithubBean;
-import com.carlisle.seed.provider.db.UserDao;
+import com.carlisle.seed.provider.db.GithubDao;
 import com.carlisle.seed.provider.http.ApiFactory;
 import com.carlisle.seed.provider.http.Domain;
 
@@ -58,7 +58,7 @@ public class SearchFragment extends LazyFragment {
         });
 
         recyclerView = (RecyclerView) view.findViewById(R.id.recycler_view);
-        adapter = new SearchAdapter(UserDao.getAll());
+        adapter = new SearchAdapter(GithubDao.getAll());
         recyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));
         recyclerView.setAdapter(adapter);
     }
@@ -82,7 +82,7 @@ public class SearchFragment extends LazyFragment {
                     @Override
                     public void onNext(GithubBean value) {
                         LogUtils.d("fetch onNext: " + value.toString());
-                        UserDao.save(value);
+                        GithubDao.add(value);
                     }
 
                     @Override

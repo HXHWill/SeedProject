@@ -60,6 +60,7 @@ ext {
             "utilcode"                     : 'com.blankj:utilcode:1.8.3',
             "SeedFramework"                : 'com.github.CarlisleChan:SeedFramework:v1.5',
             "walle"                        : 'com.meituan.android.walle:library:1.1.5',
+            "joda-time"                    : 'joda-time:joda-time:2.9.9'
     ]
 
 }

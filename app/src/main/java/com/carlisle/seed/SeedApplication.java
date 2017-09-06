@@ -6,6 +6,7 @@ import com.blankj.utilcode.util.LogUtils;
 import com.blankj.utilcode.util.Utils;
 import com.carlisle.framework.swipeback.common.SwipeBackApplication;
 import com.carlisle.seed.provider.db.RealmUtil;
+import com.carlisle.seed.provider.db.SeedModules;
 import com.google.gson.Gson;
 
 import uk.co.chrisjenx.calligraphy.CalligraphyConfig;
@@ -48,7 +49,7 @@ public class SeedApplication extends SwipeBackApplication {
     }
 
     private void initRealm() {
-        RealmUtil.init(this);
+        RealmUtil.setup(this, "visitor", 2, new SeedModules());
     }
 
     private void initUtils() {
