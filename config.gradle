@@ -53,8 +53,8 @@ ext {
             "GSYVideoPlayer"               : 'com.github.CarGuo:GSYVideoPlayer:v1.6.1',
 
             // download
-            "okgo"                         : 'com.lzy.net:okgo:3.0.1',
-            "okserver"                     : 'com.lzy.net:okserver:2.0.1',
+            "okgo"                         : 'com.lzy.net:okgo:3.0.4',
+            "okserver"                     : 'com.lzy.net:okserver:2.0.5',
 
             // tools
             "utilcode"                     : 'com.blankj:utilcode:1.8.3',
