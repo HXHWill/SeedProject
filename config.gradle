@@ -58,7 +58,7 @@ ext {
 
             // tools
             "utilcode"                     : 'com.blankj:utilcode:1.8.3',
-            "SeedFramework"                : 'com.github.CarlisleChan:SeedFramework:v1.2.0',
+            "SeedFramework"                : 'com.github.CarlisleChan:SeedFramework:v1.2.2',
             "walle"                        : 'com.meituan.android.walle:library:1.1.5',
             "joda-time"                    : 'joda-time:joda-time:2.9.9'
     ]
