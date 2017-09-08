@@ -1,0 +1,12 @@
+{
+  "channelInfoList": [
+    {
+      "channel": "github",
+      "alias": "Github"
+    },
+    {
+      "channel": "googleplay",
+      "alias": "GooglePlay"
+    }
+  ]
+}

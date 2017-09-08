@@ -1,8 +1,8 @@
 package com.carlisle.seed.support;
 
 import android.content.Context;
-import android.text.TextUtils;
 
+import com.meituan.android.walle.ChannelInfo;
 import com.meituan.android.walle.WalleChannelReader;
 
 /**
@@ -12,8 +12,12 @@ import com.meituan.android.walle.WalleChannelReader;
  */
 
 public class ChannelUtils {
-    public static int getChannel(Context context) {
-        String channel = WalleChannelReader.getChannel(context);
-        return Integer.parseInt(TextUtils.isEmpty(channel) ? "0" : channel);
+    public static String getChannel(Context context) {
+        ChannelInfo channelInfo = WalleChannelReader.getChannelInfo(context);
+        if (channelInfo != null) {
+            return channelInfo.getChannel();
+        } else {
+            return "default";
+        }
     }
 }

@@ -7,14 +7,10 @@ def globalConfiguration = rootProject.ext
 def APP_VERSION = "0.0.2"
 def APP_VERSION_CODE = 2
 
-def releaseTime() {
-    return new Date().format("yyyy-MM-dd", TimeZone.getTimeZone("UTC"))
-}
-
 walle {
     apkOutputFolder = new File("${project.buildDir}/outputs/channels");
-    apkFileNameFormat = '${appName}-${channel}-${buildType}.apk';
-    channelFile = new File("${project.getProjectDir()}/channel")
+    apkFileNameFormat = '${appName}-${channel}-${buildType}-v${versionName}.apk';
+    configFile = new File("${project.getProjectDir()}/channelconfig.json")
 }
 
 android {
@@ -56,14 +52,6 @@ android {
             zipAlignEnabled false
         }
     }
-
-//    productFlavors {
-//        github {}
-//        googlepaly {}
-//        productFlavors.all { flavor ->
-//            flavor.manifestPlaceholders = [APP_CHANNEL: name]
-//        }
-//    }
 
     lintOptions {
         abortOnError false
